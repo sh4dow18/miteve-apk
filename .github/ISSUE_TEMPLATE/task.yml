@@ -1,0 +1,56 @@
+name: "📋 Generar Tarea"
+description: "Tarea general o mejora para MiTeVe-APK"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Para todo lo que no es bug ni feature: refactor, chore, mejora técnica, tooling.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Descripción"
+      description: "Descripción de la tarea"
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "Tareas"
+      description: "Lista de subtareas"
+      placeholder: |
+        - [ ] Tarea 1
+        - [ ] Tarea 2
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: objetivo
+    attributes:
+      label: "Objetivo"
+      description: "Área(s) afectada(s). Selecciona una o varias."
+      options:
+        - label: "Player"
+        - label: "Downloads"
+        - label: "Auth"
+        - label: "Navigation"
+        - label: "Sync"
+        - label: "TV-Focus"
+        - label: "Performance"
+        - label: "Release"
+        - label: "General"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: form-factor
+    attributes:
+      label: "Form-factor"
+      description: "¿A qué factor de forma aplica?"
+      options:
+        - Phone
+        - TV
+        - Both
+    validations:
+      required: true

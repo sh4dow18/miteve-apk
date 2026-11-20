@@ -1,0 +1,101 @@
+name: "✨ Solicitar Nueva Funcionalidad"
+description: "Solicitar una nueva funcionalidad para MiTeVe-APK (phone + TV)"
+labels: ["Solicitud"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por proponer una nueva funcionalidad. Toda feature necesita su gemela phone + TV (ver parity-phone-tv).
+
+  - type: textarea
+    id: user_story
+    attributes:
+      label: "Historia de Usuario"
+      description: "Formato: Como [rol], Quiero [funcionalidad], Para [beneficio]"
+      placeholder: |
+        **Como** usuario con perfil adulto
+        **Quiero** descargar un capítulo con Media3 para verlo offline
+        **Para** verlo sin conexión en el teléfono o el TV
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Descripción"
+      description: "Descripción detallada de la funcionalidad"
+    validations:
+      required: true
+
+  - type: textarea
+    id: criteria
+    attributes:
+      label: "Criterios de Aceptación"
+      description: "Checklist de lo que debe cumplir"
+      placeholder: |
+        - [ ] Criterio 1
+        - [ ] Criterio 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: phone-twin
+    attributes:
+      label: "Phone-twin"
+      description: "Pantalla/flujo gemelo en Mobile (MobileActivity). Requerido o justificación según parity-phone-tv."
+      placeholder: |
+        Ruta: home/downloads
+        Screen: DownloadsScreen (Compose Mobile, touch)
+        UiState compartido: DownloadsUiState
+    validations:
+      required: true
+
+  - type: textarea
+    id: tv-twin
+    attributes:
+      label: "TV-twin"
+      description: "Pantalla/flujo gemelo en TV (TvActivity LEANBACK, D-pad + foco). Requerido o justificación según parity-phone-tv."
+      placeholder: |
+        Ruta: home/downloads
+        Screen: TvDownloadsScreen (Compose TV, D-pad, foco visible, overscan)
+        UiState compartido: DownloadsUiState
+    validations:
+      required: true
+
+  - type: dropdown
+    id: form-factor
+    attributes:
+      label: "Form-factor"
+      description: "¿A qué factor de forma aplica la solicitud?"
+      options:
+        - Phone
+        - TV
+        - Both
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: objetivo
+    attributes:
+      label: "Objetivo"
+      description: "Área(s) donde va la funcionalidad. Selecciona una o varias."
+      options:
+        - label: "Player"
+        - label: "Downloads"
+        - label: "Auth"
+        - label: "Navigation"
+        - label: "Sync"
+        - label: "TV-Focus"
+        - label: "Performance"
+        - label: "Release"
+        - label: "General"
+    validations:
+      required: true
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: "Mockups"
+      description: "Mockups phone + TV, diseños o enlaces a Figma (opcional, recomendado con ambas variantes)"
+    validations:
+      required: false

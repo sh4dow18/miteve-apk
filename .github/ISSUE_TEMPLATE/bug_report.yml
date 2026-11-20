@@ -1,0 +1,106 @@
+name: "🐛 Reportar Error"
+description: "Reportar un bug o error en MiTeVe-APK (phone / TV)"
+labels: ["Bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar un bug. Por favor completa la información para ayudarnos a reproducirlo en phone y/o TV.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Descripción"
+      description: "Descripción detallada del bug"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Pasos para reproducir"
+      description: "Pasos para reproducir el error"
+      placeholder: |
+        1. Abrir la app en devDebug
+        2. Ir a '...'
+        3. Ver error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Comportamiento esperado"
+      description: "Qué debería pasar"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Comportamiento actual"
+      description: "Qué pasa actualmente"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: objetivo
+    attributes:
+      label: "Objetivo"
+      description: "Área(s) afectada(s). Selecciona una o varias."
+      options:
+        - label: "Player"
+        - label: "Downloads"
+        - label: "Auth"
+        - label: "Navigation"
+        - label: "Sync"
+        - label: "TV-Focus"
+        - label: "Performance"
+        - label: "Release"
+        - label: "General"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: form-factor
+    attributes:
+      label: "Form-factor"
+      description: "¿En qué factor de forma se reproduce?"
+      options:
+        - Phone
+        - TV
+        - Both
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: "Versión"
+      description: "versionCode + flavor + commit (ej: versionCode 12 · flavor dev · commit abc1234)"
+      placeholder: "versionCode 12 · flavor dev · commit abc1234"
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Capturas phone / TV"
+      description: "Agregar screenshots o video del error (phone y TV si aplica)"
+      placeholder: |
+        Phone: (pegar imagen)
+        TV: (pegar imagen)
+    validations:
+      required: true
+
+  - type: textarea
+    id: focus-notes
+    attributes:
+      label: "Notas de foco (TV)"
+      description: "Obligatorio si form-factor es TV o Both: ¿qué vista tiene el foco? ¿D-pad responde? ¿overscan recorta algo?"
+      placeholder: |
+        Foco inicial:ira a ...
+        D-pad: arriba/abajo/izq/der ...
+        Overscan: ...
+    validations:
+      required: false
