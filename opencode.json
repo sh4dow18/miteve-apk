@@ -13,7 +13,14 @@
         "type": "local",
         "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
         "environment": {
-          "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_PERSONAL_ACCESS_TOKEN}"
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN_CUENTA1}"
+        }
+      },
+      "github-cuenta2": {
+        "type": "local",
+        "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
+        "environment": {
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN_CUENTA2}"
         }
       },
       "figma": {
