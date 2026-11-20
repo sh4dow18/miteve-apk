@@ -18,6 +18,7 @@ This skill covers ONLY labels, states, and movement rules. Bodies live in `issue
 - Language (mandatory): titles and bodies always in English. If the user provides Spanish, translate preserving meaning (keep the emoji prefix).
 - Branch slugs always in English: `Tipo/<issue>-english-short-desc` (max 4-5 words). Translate if the user provides Spanish.
 - Link (mandatory): every work branch must be linked to its issue — open an early draft PR `branch → develop` with `Closes #<issue>` (title = exact branch name) and move project Status to `In progress`.
+- Project option names (canonical, do not invent variants): Priority `🔴 Urgent | 🟠 High | 🟡 Medium`, Size `📏 Extra Small | 📏 Small | 📏 Medium | 📏 Large | 📏 Extra Large`.
 - States: `backlog → ready (has acceptance + form label) → in-progress (branch linked) → review (PR linked) → done (acceptance checked + screenshots mobile+TV where UI)`.
 - `ready` requires: form label set, acceptance criteria present, api impact stated (`new-api endpoint or none`). Bugs require reproducible steps + form factor.
 - Close rule: UI issues close only with both mobile and TV evidence attached (or single-form justification from `parity-phone-tv`).
