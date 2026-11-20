@@ -13,6 +13,7 @@ This skill covers ONLY labels, states, and movement rules. Bodies live in `issue
 
 - Labels (required on triage): `form:phone`, `form:tv`, or `form:both` + `area:<feature>` (e.g. `area:player`) + one of `type:bug|type:feature|type:task`. Secrets-adjacent issues get `area:signing` and never contain key material.
 - On create (mandatory): set `assignees: [<creator-login>]` (whoever creates the issue) + labels by kind: feature → `type:feature`, bug → `type:bug`, task → `type:task`, always with `form:phone|tv|both` + `area:<feature>`. If a label does not exist in the repo, create it first, then apply it.
+- Type + Start date (mandatory): Type is the `type:*` label above (the project has no Type field). Set ProjectV2 `Miteve APK` field `Start date` = creation date (`YYYY-MM-DD`, today) via `updateProjectV2ItemFieldValue`.
 - States: `backlog → ready (has acceptance + form label) → in-progress (branch linked) → review (PR linked) → done (acceptance checked + screenshots mobile+TV where UI)`.
 - `ready` requires: form label set, acceptance criteria present, api impact stated (`new-api endpoint or none`). Bugs require reproducible steps + form factor.
 - Close rule: UI issues close only with both mobile and TV evidence attached (or single-form justification from `parity-phone-tv`).
